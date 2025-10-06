@@ -108,3 +108,25 @@ body {
     left: 0; 
     top: -40px; 
 }
+
+/* --- ESTILO ADICIONADO PARA O BOTÃO DE CONTROLE --- */
+#toggle-color-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #555;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 10; /* Garante que o botão fique na frente do cubo */
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+#toggle-color-btn:hover {
+    background-color: #666;
+    border-color: #fff;
+}
