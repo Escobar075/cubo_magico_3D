@@ -1,13 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const cube = document.getElementById('rubik-cube');
-    // --- VARIÁVEIS NOVAS ---
-    const toggleBtn = document.getElementById('toggle-color-btn');
-    let isColorChangeEnabled = true; // Começa ativado por padrão
-
     let isDragging = false;
     // Rotação inicial (corresponde ao CSS)
-    let currentX = -30;
-    let currentY = 45;
+    let currentX = -30; 
+    let currentY = 45;  
     let startX = 0;
     let startY = 0;
     const rotationSpeed = 0.5; // Ajuste a sensibilidade da rotação
@@ -62,29 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('touchend', endDrag);
 
 
-    // --- LÓGICA ADICIONADA: Botão para ativar/desativar a alteração de cor ---
-    toggleBtn.addEventListener('click', () => {
-        // Inverte o valor da variável de controle
-        isColorChangeEnabled = !isColorChangeEnabled;
-        
-        // Atualiza o texto do botão para dar feedback ao usuário
-        if (isColorChangeEnabled) {
-            toggleBtn.textContent = 'Desativar Cores';
-            toggleBtn.style.backgroundColor = '#555';
-        } else {
-            toggleBtn.textContent = 'Ativar Cores';
-            toggleBtn.style.backgroundColor = '#b82a2a'; // Cor diferente para indicar desativado
-        }
-    });
-
-
     // --- Lógica para mudar a cor do adesivo ao clicar ---
     const colors = ['red', 'orange', 'white', 'yellow', 'green', 'blue']; // Sequência de cores
 
     document.querySelectorAll('.sticker').forEach(sticker => {
         sticker.addEventListener('click', (e) => {
-            // CONDIÇÃO MODIFICADA: Agora verifica também se a troca de cor está habilitada
-            if (isDragging || !isColorChangeEnabled) return;
+            // Evita a troca de cor se o usuário estiver tentando girar o cubo
+            if (isDragging) return;
 
             let target = e.target;
             
