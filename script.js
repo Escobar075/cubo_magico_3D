@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --- Lógica para mudar a cor do adesivo ao clicar ---
-    const colors = ['red', 'orange', 'white', 'yellow', 'green', 'blue']; // Sequência de cores
+    const colors = ['orange', 'red', 'yellow', 'white', 'green', 'blue']; // Sequência de cores
 
     document.querySelectorAll('.sticker').forEach(sticker => {
         sticker.addEventListener('click', (e) => {
@@ -85,5 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
 
 
